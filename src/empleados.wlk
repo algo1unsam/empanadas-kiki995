@@ -24,3 +24,4 @@ object galvan {
 	method dinero() { return dinero }
 	method pagarA( empleado ) { dinero -= empleado.sueldo() }
 }
+llll
