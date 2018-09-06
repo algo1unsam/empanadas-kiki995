@@ -33,31 +33,33 @@ object baigorria {
 
 	method cobrarSueldo() {
 		dinero = self.sueldo()
-		if (dinero>=deuda){
-			dinero=dinero-deuda
-			deuda=0
-		}else{ 
-			deuda=deuda-dinero
-			dinero=0
+		if (dinero >= deuda) {
+			dinero = dinero - deuda
+			deuda = 0
+		} else {
+			deuda = deuda - dinero
+			dinero = 0
 		}
 	}
 
-	method gastar(cuanto){ 
-		if (dinero>=cuanto){
-		dinero-=cuanto
-		}else{ 
-			deuda+=cuanto-dinero
-			dinero=0
-		}		
+	method gastar(cuanto) {
+		if (dinero >= cuanto) {
+			dinero -= cuanto
+		} else {
+			// por que resta dinero acá?
+			// ya sabemos que el dinero no le alcanza para pagar lo que quiere gastar
+			// por lo tanto, sólamente sumaría deuda
+			deuda += cuanto - dinero
+			dinero = 0
+		}
 	}
 
- 	method totaldeuda() {
-		
+	method totaldeuda() {
 		return deuda
- 	}
+	}
 
 	method totaldinero() {
-		 return dinero
+		return dinero
 	}
 
 }
